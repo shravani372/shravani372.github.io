@@ -1,0 +1,29 @@
+create database Mastek1;
+use database Mastek1;
+create table Membership(
+Membership_Id int,Full_Names varchar(30),Physical_Address varchar(30),Salutation_Id int references Salutation(Id),
+Constraint pk_Membership primary key (Id));
+alter table Membership add foreign key(Salutation_Id)references Salutation(Id);
+create table MovieRented(
+Movie_Rented_Names varchar(30),Membership_Id int references Membership(Id));
+alter table MovieRented
+add foreign key (Membership_Id) references Membership(Id);
+create table Salutation(
+Salutation_Id int not null,
+Salutation varchar (30) not null,
+constraint pk_Salutation primary key(id));
+
+insert into Membership values(1,'Janet Jones','First Street Poll no 4',2),
+insert into Membership values(2,'Robert Phil','3rd Street 34',1),
+insert into Membership values(3,'Robert Phill','5th Avenue',1);
+
+insert into MovieRented(1,'Pirates of Carribean'),
+insert into MovieRented(1,'Clash of Titans'),
+insert into MovieRented(2,'Pirates of Forgetting Sarah Marshal',);
+insert into MovieRented(2,'Daddy's Little Girl');
+insert into MovieRented(3,'Clash of Titan');
+
+insert into Salutation values('1','Mr.');
+insert into Salutation values('2','Ms.');
+insert into Salutation values('3','Mrs.');
+insert into Salutation values('4','Dr.');
