@@ -1,0 +1,33 @@
+1)select * from emp;
+2)select distinct deptno,job from emp;
+3)select * from emp order by sal asc;
+4)select * from emp order by deptno asc and job desc;
+5)select distinct deptno,job from emp group by deptno desc
+6)select * from emp where empno in(select mgr from emp)
+7)select ename from emp where hiredate<('01-jan-1981')
+8)Select ename,empno,sal,sal/30,12*sal annsal from emp order by annsal asc;
+9)select empno,ename ,job,hiredate from emp where empno in (select mgr from emp);
+10)select empno,ename,sal from emp where mgr = 7369; 
+11)select * from emp where comm. > sal; 
+13)select * from emp where (sal/30) >100; 
+14)select * from emp where job = ‘CLERK’ or job = ‘ANALYST’ order by job desc; 
+15)select * from emp where hiredate in ('01-may-81','03-dec-81','17-dec- 81','19-jan-80') order by hiredate asc; 
+16)select empno,ename,deptno from emp where deptno in(10,20);
+17)select * from emp where hiredate between '01-jan-81' and 31-dec-81'; 
+19)select * from emp where sal*12 between 22000 and 45000;
+20)select ename from emp where length (ename) = 5;
+21)select ename from emp where ename like "s%" and length(ename)=5; 
+22)select ename from emp where length(ename) = 4 and ename like "__r%"; 
+23)select ename from emp where length(ename) = 5 and ename like "S%H";
+24)select * from emp where to_char (hiredate,’mon’) = ‘jan’;
+27)select ename from emp where ename like "%ll%";
+29)select * from emp where deptno != 20;
+30)select * from emp where job not in ("president","manager") order by sal desc;
+31)select * from emp where empno not like "78%" ;
+32)
+34)select * from emp where to_char (hiredate,’MON’) not in (‘MAR’); 
+35)select * from emp where job =‘CLERK’ and deptno = 20; 
+36)select * from emp where to_char(hiredate,’YYYY’) = ‘1981’ and (deptno =30 or deptno =10) ;
+37)select * from emp where ename = ‘SMITH’ ; 
+38)select loc from emp e , dept d where e.ename = ‘SMITH’ and e.deptno = d.deptno ; 
+
